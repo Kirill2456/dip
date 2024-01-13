@@ -1,6 +1,6 @@
 #include "diplom.h"
 #include "ui_diplom.h"
-
+#include "target.h"
 
 //#include ""
 diplom::diplom(QWidget *parent)
@@ -25,16 +25,17 @@ void diplom::getParam(QVector<Target> & t)
     tar.Dist = ui->Print_dist_tar->value();
     for(int i =0; i < t.count; i++){
          t.at(i).getShipParam(ui->Print_V_ship->value());
-         t.at(i).
+         //t.at(i).
     }
 
-    t.getTarParam()
+    t.getTarParam();
 }
 
 void diplom::calculate(QVector<Target> & t)
 {
     float res = t.calcelation_distance_ship_to_target(tar, &ship, var, j);
     ui->Vivod_Dist->setValue(res);
+   // ui->tableView->setValue(res);
 
     res = t.degrees_peleng(tar, &ship, var, j);
     ui->Vivod_Pealing->setValue(res);

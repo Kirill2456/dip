@@ -2,12 +2,13 @@
 #define DIPLOM_H
 
 #include <QMainWindow>
+#include <QVector>
 #define PI 3.1415
 QT_BEGIN_NAMESPACE
 namespace Ui { class diplom; }
 QT_END_NAMESPACE
 
-struct main_target{
+/*struct main_target{
  float x[10]; float y[10];
  float V;
  float K;
@@ -19,8 +20,9 @@ struct carrier_ship
  float K;
  float Dist;
 }ship;
+*/
 
-
+//class Target;
 class diplom : public QMainWindow
 {
     Q_OBJECT

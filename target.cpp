@@ -6,10 +6,10 @@ Target::Target()
 {
 
 }
-float Target :: degrees_peleng(struct main_target* ptar, struct  carrier_ship* pship, int var, int j)
+float Target :: degrees_peleng(struct main_target* ptar, struct  carrier_ship* pship)
 {
- float dx1 = ptar[var].x[j] - pship->x;
- float dy1 = ptar[var].y[j] - pship->y;
+ float dx1 = ptar->x - pship->x;
+ float dy1 = ptar->y - pship->y;
  float arctan = (atan(dx1 / dy1) * 180 / PI);
  if (arctan < 0)
  {
@@ -49,18 +49,18 @@ float Target :: ku_degrees(struct  carrier_ship* pship, float peling)
   return ku;
 }
 
-void Target :: getting_x (struct main_target ptar[], int var, int j)
+void Target :: getting_x (struct main_target ptar)
 {
- float temp = (ptar[var].K) * PI / 180;
- float x = ptar[var].Dist * sin(temp);
- ptar[var].x[j] = x;
+ float temp = (ptar.K) * PI / 180;
+ float x = ptar.Dist * sin(temp);
+ ptar.x = x;
 }
 
-void Target :: getting_y (struct main_target ptar[], int var, int j)
+void Target :: getting_y (struct main_target ptar)
 {
- float temp = (ptar[var].K) * PI / 180;
- float y = ptar[var].Dist * cos(temp);
- ptar[var].y[j] = y;
+ float temp = (ptar.K) * PI / 180;
+ float y = ptar.Dist * cos(temp);
+ ptar.y = y;
 }
 
 void Target :: change(struct main_target* ptar, int var, int j)
